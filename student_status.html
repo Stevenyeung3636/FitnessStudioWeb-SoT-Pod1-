@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {background-color: whitesmoke;}
+        h1   {color: black;text-align:center;font-size:200%;}
+        h2   {color: black;text-align:center;font-size:150%;font-weight: 300;}
+        p    {color: black;}
+        #hide_element:target {
+            display: none;
+        }
+        .show_element:target {
+            display: block;
+        }
+    </style>
+    <title style="text-align:center;">Fitness Studio Website</title>
+</head>
+<body>
+<div>
+    <h1>Student Status</h1>
+    <p>Please search the student name to find view status.</p>
+    <form action="/action_page.php">
+        <label for="code">Course Code:</label>
+        <input type="text" id="code" name="code"><br><br>
+        <input type="submit" value="Search">
+    </form>
+</div>
+
+<article>
+    <h2>----------------------------------------------------------------------------------------</h2>
+    <h2>Student Info</h2>
+    <ul>
+        <li>First Name</li>
+        <script>
+            document.getElementById("code").innerHTML;
+        </script>
+        <li>Last Name</li>
+        <li>Membership Type</li>
+        <li>Other Info</li>
+    </ul>
+    <!-- <script>
+        document.getElementById("demo").innerHTML = "Hello JavaScript!";
+    </script> -->
+</article>
+
+
+<!-- <p style="background-color:powderblue;">This is a paragraph.</p> -->
+<!-- <img src="img_girl.jpg" width="500" height="600"> -->
+
+</body>
+</html>
