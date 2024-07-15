@@ -2,7 +2,7 @@ var enrolled = [];
 
 $(document).ready(function() {
     $.ajax({
-        url: "/classes/1", // Replace with the actual backend URL
+        url: "localhost:8080/classes/1", // Replace with the actual backend URL
         type: "GET",
         success: function(response) {
           // Parse the JSON response
@@ -11,7 +11,7 @@ $(document).ready(function() {
           // Loop through the classes and add them to the HTML
           for (var i = 0; i < classes.length; i++) {
             var classData = classes[i];
-            var className = classData.name;
+            var className = classData.name +  " | " + classData.description + " | " + classData.instructor + " | " + classData.schedule;
             // var classStatus = classData.status;
             var classId = classData.id;
             enrolled.push(classId);
@@ -71,7 +71,7 @@ $(document).ready(function() {
       });
 
       $.ajax({
-        url: "/classes", // Replace with the actual backend URL
+        url: "localhost:8080/classes", // Replace with the actual backend URL
         type: "GET",
         success: function(response) {
           // Parse the JSON response
@@ -80,7 +80,7 @@ $(document).ready(function() {
           // Loop through the classes and add them to the HTML
           for (var i = 0; i < classes.length; i++) {
             var classData = classes[i];
-            var className = classData.name;
+            var className = classData.name +  " | " + classData.description + " | " + classData.instructor + " | " + classData.schedule;
             var classId = classData.id;
             // var classStatus = classData.status;
             var classSchedule = classData.schedule;
@@ -142,8 +142,8 @@ $(document).ready(function() {
     $(".enrollBtn").click(function() {
       const id = $(this).attr("id");
       $.ajax({
-        url: "/enrollments", // Replace with the actual backend URL 
-        type: "GET",
+        url: "localhost:8080/enrollments", // Replace with the actual backend URL 
+        type: "POST",
         data: JSON.stringify({
           studentId: 1,
           classId: id
