@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
     <style>
         body {background-color: whitesmoke;}
         h1   {color: black;text-align:center;font-size:200%;}
@@ -19,33 +20,34 @@
 <div>
     <h1>Student Status</h1>
     <p>Please search the student name to find view status.</p>
-    <form action="/action_page.php">
-        <label for="code">Course Code:</label>
-        <input type="text" id="code" name="code"><br><br>
-        <input type="submit" value="Search">
+    <form class="form-info" id="info-form">
+<!--        action="/action_page.php"-->
+        <label for="username">User name:</label>
+        <input type="text" id="username" name="username"><br><br>
+        <input type="submit" id="submit-btn" value="Search">
+<!--        <script src="studentStatusController.java"></script>-->
     </form>
 </div>
 
 <article>
     <h2>----------------------------------------------------------------------------------------</h2>
     <h2>Student Info</h2>
-    <ul>
-        <li>First Name</li>
-        <script>
-            document.getElementById("code").innerHTML;
-        </script>
-        <li>Last Name</li>
-        <li>Membership Type</li>
-        <li>Other Info</li>
-    </ul>
-    <!-- <script>
-        document.getElementById("demo").innerHTML = "Hello JavaScript!";
-    </script> -->
+    <div id="getResultDiv">
+        <ul class="list-group">
+            <!--        <li>First Name</li>-->
+            <!--        <li id="stu-name"> </li>-->
+            <!--&lt;!&ndash;        <script>&ndash;&gt;-->
+            <!--&lt;!&ndash;            document.getElementById("code").innerHTML;&ndash;&gt;-->
+            <!--&lt;!&ndash;        </script>&ndash;&gt;-->
+            <!--        <li>Membership Type</li>-->
+            <!--        <li id="mem-type"> </li>-->
+            <!--        <li>Other Info</li>-->
+            <!--        <li id="other-info"> </li>-->
+        </ul>
+
+    </div>
 </article>
 
-
-<!-- <p style="background-color:powderblue;">This is a paragraph.</p> -->
-<!-- <img src="img_girl.jpg" width="500" height="600"> -->
-
+<script src="studentStatus.js"></script>
 </body>
 </html>
