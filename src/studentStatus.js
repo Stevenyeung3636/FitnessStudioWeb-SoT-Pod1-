@@ -1,6 +1,6 @@
 $(document).ready(function () {
 
-    $("#info-form").submit(function (event) {
+    $("#submit-btn").submit(function (event) {
 
         //stop submit the form, we will post it manually.
         event.preventDefault();
