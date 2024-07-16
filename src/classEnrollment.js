@@ -12,11 +12,11 @@ $(document).ready(function() {
           // Loop through the classes and add them to the HTML
           for (var i = 0; i < classes.length; i++) {
             var classData = classes[i];
-            var className = classData.name +  " | " + classData.description + " | " + classData.instructor + " | " + classData.schedule;
+            var className = classData.name +  " | " + classData.schdeule + " | " + classData.instructor;
             // var classStatus = classData.status;
             var classId = classData.id;
             enrolled.push(classId);
-            var classSchedule = classData.schedule;
+            var classDescription = classData.description;
             
             // Create the HTML elements for the class
             var classElement = $("<div>").addClass("d-flex text-body-secondary pt-3");
@@ -32,7 +32,7 @@ $(document).ready(function() {
             var justifyBetweenElement = $("<div>").addClass("d-flex justify-content-between");
             var strongElement = $("<strong>").addClass("text-gray-dark").text(className);
             // var buttonElement = $("<button>").addClass("enrollBtn").attr('id', classId).text("Enroll");
-            var spanElement = $("<span>").addClass("d-block").text(classSchedule);
+            var spanElement = $("<span>").addClass("d-block").text(classDescription);
             
             // Add SVG content
             // if (classStatus == 1) {
@@ -82,10 +82,10 @@ $(document).ready(function() {
           // Loop through the classes and add them to the HTML
           for (var i = 0; i < classes.length; i++) {
             var classData = classes[i];
-            var className = classData.name +  " | " + classData.description + " | " + classData.instructor + " | " + classData.schedule;
+            var className = classData.name +  " | " + classData.schdeule + " | " + classData.instructor;
             var classId = classData.id;
             // var classStatus = classData.status;
-            var classSchedule = classData.schedule;
+            var classDescription = classData.description;
             
             // Create the HTML elements for the class
             var classElement = $("<div>").addClass("d-flex text-body-secondary pt-3");
@@ -101,10 +101,10 @@ $(document).ready(function() {
             var justifyBetweenElement = $("<div>").addClass("d-flex justify-content-between");
             var strongElement = $("<strong>").addClass("text-gray-dark").text(className);
             var buttonElement = $("<button>").addClass("enrollBtn").attr('id', classId).text("Enroll");
-            var spanElement = $("<span>").addClass("d-block").text(classSchedule);
+            var spanElement = $("<span>").addClass("d-block").text(classDescription);
             
             // Add SVG content
-            if (enrolled.includes(className)) {
+            if (enrolled.includes(classId)) {
               svgElement.append(
                 $("<title>").text("Placeholder"),
                 $("<rect>").attr("width", "100%").attr("height", "100%").attr("fill", "#e83e8c"),
@@ -120,7 +120,7 @@ $(document).ready(function() {
             
             
             // Construct the class structure
-            if (enrolled.includes(className) == 1) {
+            if (enrolled.includes(classId) == 1) {
               justifyBetweenElement.append(strongElement);
             } else {
               justifyBetweenElement.append(strongElement, buttonElement);
