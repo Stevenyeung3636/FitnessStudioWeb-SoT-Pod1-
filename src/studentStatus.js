@@ -1,7 +1,7 @@
 $(document).ready(function () {
 
-    $("#submit-btn").submit(function (event) {
-
+    $("#submit-btn").click(function (event) {
+        console.log("start");
         //stop submit the form, we will post it manually.
         event.preventDefault();
         fire_ajax_submit();
@@ -13,20 +13,24 @@ function fire_ajax_submit() {
 
     var search = {}
     search["username"] = $("#username").val();
+    $('#getResultDiv .list-group').append("Name: Sharmania <br>");
+    $('#getResultDiv .list-group').append("Subscription: 3-month <br>");
+    $('#getResultDiv .list-group').append("Other Info: Dance class <br>");
 
 //    $("#submit-btn").prop("disabled", true);
 
     $.ajax({
         type: "GET",
         contentType: "application/json",
-        url: "http://localhost:8080/auth/users/1",
+        url: "user/1",
 //        data: JSON.parse(search),
         dataType: 'json',
         cache: false,
         timeout: 600000,
         success: function (data) {
-            var stu = "Name: " + data.username + "account: " + data.accountNonExpired + "<br>"
-            $('#getResultDiv .list-group').append(stu);
+
+//            var stu = "Name: " + data.username + "account: " + data.accountNonExpired + "<br>"
+            $('#getResultDiv .list-group').append(data);
 
             console.log("SUCCESS : ", data);
         },
