@@ -1,55 +1,80 @@
 <!DOCTYPE html>
 <html>
 <head>
-<style>
-body {background-color: whitesmoke;}
-h1   {color: black;text-align:center;font-size:200%;}
-h2   {color: black;text-align:center;font-size:150%;font-weight: 300;}
-p    {color: black;}
-th, td {
-        padding-top: 10px;
-        padding-left: 10px;
-        text-align: center;
-        /* border-style: inset; */
-      }
-</style>
-<title style="text-align:center;">Fitness Studio Website</title>
+    <style>
+        body {background-color: whitesmoke;}
+        h1   {color: black; text-align:center; font-size:200%;}
+        h2   {color: black; text-align:center; font-size:150%; font-weight: 300;}
+        p    {color: black;}
+        th, td {
+            padding-top: 10px;
+            padding-left: 10px;
+            text-align: center;
+        }
+        table {
+            margin: 0 auto; /* Center the table */
+            border-collapse: collapse;
+            width: 80%; /* Adjust the width as needed */
+        }
+        th, td {
+            border: 1px solid black; /* Optional: Add borders to table cells */
+            padding: 10px; /* Optional: Add padding to table cells */
+        }
+        .center-container {
+            text-align: center; /* Center the container */
+            margin: 20px 0; /* Add some margin for spacing */
+        }
+        .button-container {
+            text-align: center; /* Center the button container */
+            margin: 20px 0; /* Add some margin for spacing */
+        }
+        form {
+            display: inline-block; /* Keep the form elements together */
+            text-align: left; /* Align text inside the form */
+        }
+    </style>
+    <title>Fitness Studio Website</title>
 </head>
 <body>
-
-<h1>Class Status</h1>
-<p>Please search the course code to find view status.</p>
-<form action="/action_page.php">
-    <label for="fname">First name:</label>
-    <input type="text" id="fname" name="fname"><br><br>
-    <label for="lname">Last name:</label>
-    <input type="text" id="lname" name="lname"><br><br>
-    <input type="submit" value="Search">
-</form>
-<!-- <p>This is a paragraph.</p> -->
+<div class="center-container">
+    <h1>Class Status</h1>
+    <p>Please search the course code to find view status.</p>
+    <form action="/action_page.php">
+        <label for="fname">First name:</label>
+        <input type="text" id="fname" name="fname"><br><br>
+        <label for="lname">Last name:</label>
+        <input type="text" id="lname" name="lname"><br><br>
+        <input type="submit" value="Search">
+    </form>
+</div>
 
 <article>
     <h2>----------------------------------------------------------------------------------------</h2>
     <h2>Class Info</h2>
-    <p>Time:</p>
-    <p>Venue:</p>
-    <p>Instructor:</p>
+    <div class="center-container">
+        <p>See the details below for which classes are running:</p>
+        <div id="classDetails"></div> <!-- Updated container for class details -->
+    </div>
+
+    <script src="class_status.js"></script>
+
+    <h2>----------------------------------------------------------------------------------------</h2>
+    <h2>Students Enrolled</h2>
     <table style="width:50%">
-        
         <tr>
-        <th>Enrolled Student</th>
-        <th>Paid</th>
-        <th>Attendance</th>
+            <th>Enrolled Student</th>
+            <th>Paid</th>
+            <th>Attendance</th>
         </tr>
         <tr>
-        <td>Alfreds Futterkiste</td>
-        <td>Yes</td>
-        <td>Yes</td>
+            <td>Alfreds Futterkiste</td>
+            <td>Yes</td>
+            <td>Yes</td>
         </tr>
         <tr>
-        <td>Centro comercial</td>
-        <td>No</td>
-        <td>Yes</td>
+            <td>Centro comercial</td>
+            <td>No</td>
+            <td>Yes</td>
         </tr>
     </table>
 </article>
