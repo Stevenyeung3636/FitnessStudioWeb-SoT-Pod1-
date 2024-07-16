@@ -2,8 +2,9 @@ var enrolled = [];
 
 $(document).ready(function() {
     $.ajax({
-        url: "localhost:8080/classes/1", // Replace with the actual backend URL
+        url: "http://localhost:8080/classes/1", // Replace with the actual backend URL
         type: "GET",
+        crossDomain: true,
         success: function(response) {
           // Parse the JSON response
           var classes = JSON.parse(response);
@@ -71,8 +72,9 @@ $(document).ready(function() {
       });
 
       $.ajax({
-        url: "localhost:8080/classes", // Replace with the actual backend URL
+        url: "http://localhost:8080/classes", // Replace with the actual backend URL
         type: "GET",
+        crossDomain: true,
         success: function(response) {
           // Parse the JSON response
           var classes = JSON.parse(response);
@@ -142,7 +144,7 @@ $(document).ready(function() {
     $(".enrollBtn").click(function() {
       const id = $(this).attr("id");
       $.ajax({
-        url: "localhost:8080/enrollments", // Replace with the actual backend URL 
+        url: "http://localhost:8080/enrollments", // Replace with the actual backend URL 
         type: "POST",
         data: JSON.stringify({
           studentId: 1,
