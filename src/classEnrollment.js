@@ -7,11 +7,11 @@ $(document).ready(function() {
         crossDomain: true,
         success: function(response) {
           // // Parse the JSON response
-          // var classes = JSON.parse(response);
+          var classes = JSON.parse(response);
           
           // Loop through the classes and add them to the HTML
-          for (var i = 0; i < response.length; i++) {
-            var classData = response[i];
+          for (var i = 0; i < classes.length; i++) {
+            var classData = classes[i];
             var className = classData.name +  " | " + classData.schdeule + " | " + classData.instructor;
             // var classStatus = classData.status;
             var classId = classData.id;
@@ -77,11 +77,11 @@ $(document).ready(function() {
         crossDomain: true,
         success: function(response) {
           // Parse the JSON response
-          // var classes = JSON.parse(response);
+          var classes = JSON.parse(response);
           
           // Loop through the classes and add them to the HTML
-          for (var i = 0; i < response.length; i++) {
-            var classData = response[i];
+          for (var i = 0; i < classes.length; i++) {
+            var classData = classes[i];
             var className = classData.name +  " | " + classData.schdeule + " | " + classData.instructor;
             var classId = classData.id;
             // var classStatus = classData.status;
